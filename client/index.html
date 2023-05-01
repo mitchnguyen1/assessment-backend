@@ -2,61 +2,48 @@
 <html>
   <head>
     <title>Back End Assessment</title>
-    <style>
-      .container {
-        margin: 20vh auto;
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        max-width: fit-content;
-        justify-content: center;
-        align-items: center;
-      }
-      h1{
-        text-align: center;
-      }
-      ol{
-        margin: 0vh auto;
-        font-size: 20px;
-      }
-      button{
-        max-width: fit-content;
-      }
-      #newGoal{
-        border: 2px red solid
-      }
-      #updateGoal{
-        border: 2px green solid
-      }
-      .deleteBtn{
-        background-color: red;
-        border-radius: 10px;
-        margin: 1vh;
-
-         }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body class="container">
-    <button id="complimentButton">Get a compliment</button>
-    <button id="fortuneButton">Get a fortune</button>
+    <button id="complimentButton" class="getBtn">Get a compliment</button>
+    <div class="display" id="displayComp">
+      <marquee id="compScroll" behavior="scroll" direction="left">
+  Display Compliment - Display Compliment - Display Compliment - Display Compliment - Display Compliment - Display Compliment - Display Compliment - Display Compliment -</marquee>
+    
+    
+</div>
+    <button id="fortuneButton"></button>
+    <div class="display" id="displayFortune">
+      <marquee id="fortuneScroll" behavior="scroll" direction="left">
+        Display Fortune - Display Fortune - Display Fortune - Display Fortune - Display Fortune - Display Fortune - Display Fortune - Display Fortune -</marquee>
+    
+      </div>
+
+    <div class="createGoal">
+    <h1 id="goalTitle">Create a new goal</h1>
     <form id="newGoal">
-      <label for="goalInput">Your Goal:</label>
+      <label for="goalInput">Enter Your Goal:</label>
       <input type="text" id="goalInput">
-      <button type="submit">Submit</button>
+      <button type="submit" class="submit">Submit</button>
     </form>
+  </div>
+  
     <form id="updateGoal">
-      <label for="updateGoalInput">Uppdate Your Goal:</label>
+      <label for="updateGoalInput">Update Your Goal:</label>
       <input type="text" id="updateGoalInput">
       <label for="goalID">Goal Number:</label>
       <input type="text" id="goalID">
-      <button type="submit">Submit</button>
+      <button type="submit"  class="submitUpdate">Submit</button>
     </form>
 
-    <h1>Your Goals:</h1>
+    <div class="list">
+    <h1 id="listTitle">Your Goals:</h1>
     <ol id="goalList">
     </ol>
+  </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
     
   </body>
+  
 </html>

@@ -1,0 +1,151 @@
+body{
+    margin: 0;
+    background-color: #280659;
+    color: white;
+}
+
+.container{
+    margin: 3vh auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+}
+
+#Text{
+    padding: 5px;
+    text-align: center;
+    font-size: 20px;
+    margin: 0;
+}
+
+.getBtn{
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: larger;
+    -webkit-box-shadow: 0px 0px 54px 5px rgba(255,255,255,0.5);
+    -moz-box-shadow: 0px 0px 54px 5px rgba(255,255,255,0.5);
+    box-shadow: 0px 0px 54px 5px rgba(255,255,255,0.5);
+}
+
+.display{
+    /* display: none; */
+    width: 500px;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(228, 228, 42);
+    color: black;
+    -webkit-box-shadow: 4px 6px 5px 0px rgba(247,244,247,1);
+    -moz-box-shadow: 4px 6px 5px 0px rgba(247,244,247,1);
+    box-shadow: 4px 6px 5px 0px rgba(247,244,247,1);
+}
+
+#fortuneButton{
+    background-image: url('fortune.png');
+    background-size:cover;
+    background-size: 150px;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 100px;
+    background-color: transparent;
+    border: none;
+}
+
+#displayFortune{
+    background-color: #C04CFD;
+    font-size: 20px;
+}
+.createGoal{
+    border: 2px black solid;
+    padding: 10px 20px;
+    background-color: #5E2BFF;
+    border-radius: 10px;
+    -webkit-box-shadow: 8px 9px 5px 3px rgba(156,64,254,1);
+    -moz-box-shadow: 8px 9px 5px 3px rgba(156,64,254,1);
+    box-shadow: 8px 9px 5px 3px rgba(156,64,254,1);
+}
+
+#newGoal{
+    display:flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    font-size:25px;
+    margin-bottom: 2vh;
+    width: 500px;
+}
+#goalTitle{
+    margin-top: 0;
+    margin-bottom: 2vh;
+}
+#goalInput{
+    font-size: 20px;
+    width: 200px;
+    border-radius: 8px;
+    height: auto;
+}
+
+#updateGoal{
+    border: 2px rgb(0, 0, 0) solid;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 20px;
+    width: 500px;
+    font-size:30px;
+    background-color: #31259a;
+    border-radius: 10px;
+    -webkit-box-shadow: 8px 9px 5px 3px rgba(145,110,255,1);
+    -moz-box-shadow: 8px 9px 5px 3px rgba(145,110,255,1);
+    box-shadow: 8px 9px 5px 3px rgba(145,110,255,1);
+}
+#updateGoal input{
+    font-size:25px;
+    border-radius: 8px;
+}
+#goalID{
+    width: 40px;
+    margin: auto;
+}
+.submitUpdate{
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+    width: min-content;
+    margin: auto;
+    padding: 5px;
+}
+.submit{
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+
+}
+
+.deleteBtn{
+    background-color: #e01a4f;
+    border-radius: 10px;
+    margin: 1vh;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+}
+#listTitle{
+    font-size: 50px;
+}
+ol{
+    margin: 0vh auto;
+}
+li{
+    font-size: 30px;
+}
+
