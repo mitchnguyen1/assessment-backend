@@ -79,6 +79,16 @@ module.exports = {
     },
     displayGoals: (req,res) =>{
         res.status(200).send(goals)
+    },
+    test: (req,res)=>{
+        try{
+            getThis()
+            res.status(200).send(randomFortune())
+        }
+        catch(err){
+            rollbar.error(err)
+            res.status(500).send(err)
+        }
     }
     
 }
