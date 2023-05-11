@@ -110,7 +110,7 @@ test.addEventListener('click',()=>{
   })
 })
 critical.addEventListener('click',()=>{
-    axios.get(`${baseUrl}/api/test/`)
+    axios.get(`${baseUrl}/api/critical/`)
     .then(res => {
        alert(res.data)
 }).catch(error => {
@@ -118,7 +118,7 @@ critical.addEventListener('click',()=>{
   })
 })
 warning.addEventListener('click',()=>{
-    axios.get(`${baseUrl}/api/test/`)
+    axios.get(`${baseUrl}/api/warning/`)
     .then(res => {
        alert(res.data)
 }).catch(error => {
