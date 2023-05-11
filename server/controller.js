@@ -23,7 +23,7 @@ module.exports = {
             rollbar.log(`Random compliment returned: ${randomCompliment}`)
             res.status(200).send(randomCompliment);
         }catch(err){
-            rollbar.error(err)
+            rollbar.critical(err)
             res.status(500).send(err)
         }
     },
@@ -82,13 +82,36 @@ module.exports = {
     },
     test: (req,res)=>{
         try{
-            getThis()
+            testError()
+            rollbar.info('success')
             res.status(200).send(randomFortune())
         }
         catch(err){
             rollbar.error(err)
             res.status(500).send(err)
         }
-    }
+    },
+    critical:(req,res)=>{
+        try{
+            critical()
+            rollbar.info('success')
+            res.status(200).send(this.critical)
+        }
+        catch(err){
+            rollbar.critical(err)
+            res.status(500).send(err)
+        }
+    },
+    warning: (req,res)=>{
+        try{
+            warning()
+            rollbar.info('success')
+            res.status(200).send(randomFortune())
+        }
+        catch(err){
+            rollbar.warning(err)
+            res.status(500).send(err)
+        }
+    },
     
 }
