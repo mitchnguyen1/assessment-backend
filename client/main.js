@@ -18,7 +18,7 @@ const test = document.getElementById('test')
 const critical = document.getElementById('critical')
 const warning = document.getElementById('warning')
 
-const baseUrl = "http://35.89.242.151"
+const baseUrl = "http://35.91.215.237"
 
 const getCompliment = () => {
     axios.get(`${baseUrl}/api/compliment/`)
