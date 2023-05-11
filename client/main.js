@@ -13,6 +13,10 @@ const updateGoalInput = document.querySelector('#updateGoalInput')
 const updateGoalID = document.querySelector('#goalID')
 //delete goal button
 const deleteBtn = document.querySelectorAll('.deleteBtn')
+//rollbar buttons
+const test = document.getElementById('test')
+const critical = document.getElementById('critical')
+const warning = document.getElementById('warning')
 
 const baseUrl = "http://35.89.242.151"
 
@@ -97,6 +101,30 @@ complimentBtn.addEventListener('click', getCompliment)
 fortuneBtn.addEventListener('click',getFortune)
 newGoalForm.addEventListener('submit',newGoal)
 updateGoalForm.addEventListener('submit',updateGoal)
+test.addEventListener('click',()=>{
+    axios.get(`${baseUrl}/api/test/`)
+    .then(res => {
+       alert(res.data)
+}).catch(error => {
+    alert('Error: ' + error.message);
+  })
+})
+critical.addEventListener('click',()=>{
+    axios.get(`${baseUrl}/api/test/`)
+    .then(res => {
+       alert(res.data)
+}).catch(error => {
+    alert('Error: ' + error.message);
+  })
+})
+warning.addEventListener('click',()=>{
+    axios.get(`${baseUrl}/api/test/`)
+    .then(res => {
+       alert(res.data)
+}).catch(error => {
+    alert('Error: ' + error.message);
+  })
+})
 
 // constantly display the goal on load/refresh
 axios.get(`${baseUrl}/api/goals`)
