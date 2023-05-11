@@ -14,8 +14,10 @@ const updateGoalID = document.querySelector('#goalID')
 //delete goal button
 const deleteBtn = document.querySelectorAll('.deleteBtn')
 
+const baseUrl = "http://35.89.242.151"
+
 const getCompliment = () => {
-    axios.get("http://localhost:4000/api/compliment/")
+    axios.get(`${baseUrl}/api/compliment/`)
         .then(res => {
             //display random comp in the compliment display box
             const data = res.data;
@@ -26,7 +28,7 @@ const getCompliment = () => {
 
 //goes on link and get the object being sent(fortune)
 const getFortune = () => {
-    axios.get("http://localhost:4000/api/fortune")
+    axios.get(`${baseUrl}/api/fortune`)
     //after success
         .then(res => {
         //display random comp in the compliment display box
@@ -50,7 +52,7 @@ const displayGoals = data =>{
 }
 
 //upload the new goal(body) in array then display
-const postGoal = body => axios.post('http://localhost:4000/api/newGoal', body).then(res => {
+const postGoal = body => axios.post(`${baseUrl}/api/newGoal`, body).then(res => {
     displayGoals(res.data)
   }).catch(err => {
     console.log(err)
@@ -68,7 +70,7 @@ function newGoal(event) {
 }
 
 //function to update a certain goal in the array then displays all goals
-const putGoal = body => axios.put(`http://localhost:4000/api/updateGoal/${updateGoalID.value}`, body).then(res => {
+const putGoal = body => axios.put(`${baseUrl}/api/updateGoal/${updateGoalID.value}`, body).then(res => {
     displayGoals(res.data)
 })
 //function for update form, grabs the id and goal to replace
@@ -87,7 +89,7 @@ const updateGoal = event => {
 //delete goal function
 //invoked is located as onclick in the button
 //searches array and slice it out
-const deleteGoal = id => axios.delete(`http://localhost:4000/api/deleteGoal/${id}`).then(res =>{
+const deleteGoal = id => axios.delete(`${baseUrl}/api/deleteGoal/${id}`).then(res =>{
     displayGoals(res.data)
 })
 
@@ -97,7 +99,7 @@ newGoalForm.addEventListener('submit',newGoal)
 updateGoalForm.addEventListener('submit',updateGoal)
 
 // constantly display the goal on load/refresh
-axios.get("http://localhost:4000/api/goals")
+axios.get(`${baseUrl}/api/goals`)
 .then(res =>{
     displayGoals(res.data)
 })
