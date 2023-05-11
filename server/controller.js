@@ -1,14 +1,32 @@
+require('dotenv').config()
+
+const { ROLLBAR_ACCESS_TOKEN} = process.env
+// include and initialize the rollbar library with your access token
+var Rollbar = require('rollbar')
+var rollbar = new Rollbar({
+  accessToken: `${ROLLBAR_ACCESS_TOKEN}`,
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
+
+
 let goals = []
 let id =0
 module.exports = {
     getCompliment: (req, res) => {
         const compliments = ["Gee, you're a smart cookie!", "Cool shirt!", "Your Javascript skills are stellar."];
       
-        // choose random compliment
-        let randomIndex = Math.floor(Math.random() * compliments.length);
-        let randomCompliment = compliments[randomIndex];
-      
-        res.status(200).send(randomCompliment);
+        try{
+            // choose random compliment
+            let randomIndex = Math.floor(Math.random() * compliments.length);
+            let randomCompliment = compliments[randomIndex];
+            console.log(1)
+            rollbar.error(`Random compliment returned: ${randomCompliment}`)
+            res.status(200).send(randomCompliment);
+        }catch(err){
+            rollbar.error(err)
+            res.status(500).send(err)
+        }
     },
     //gets a random fortune from the array and send it
     getFortune: (req,res) => {
