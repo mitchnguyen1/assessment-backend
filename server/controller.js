@@ -15,13 +15,11 @@ let id =0
 module.exports = {
     getCompliment: (req, res) => {
         const compliments = ["Gee, you're a smart cookie!", "Cool shirt!", "Your Javascript skills are stellar."];
-      
         try{
             // choose random compliment
             let randomIndex = Math.floor(Math.random() * compliments.length);
             let randomCompliment = compliments[randomIndex];
-            console.log(1)
-            rollbar.error(`Random compliment returned: ${randomCompliment}`)
+            rollbar.info(`Random compliment returned: ${randomCompliment}`)
             res.status(200).send(randomCompliment);
         }catch(err){
             rollbar.error(err)
