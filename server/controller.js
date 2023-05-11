@@ -20,7 +20,7 @@ module.exports = {
             // choose random compliment
             let randomIndex = Math.floor(Math.random() * compliments.length);
             let randomCompliment = compliments[randomIndex];
-            rollbar.info(`Random compliment returned: ${randomCompliment}`)
+            rollbar.info(`Random compliment: ${randomCompliment}`)
             res.status(200).send(randomCompliment);
         }catch(err){
             rollbar.critical(err)
@@ -33,7 +33,7 @@ module.exports = {
         try{
             let randomNum = Math.floor(Math.random() * fortune.length)
             let randomFortune = fortune[randomNum]
-            rollbar.info(`Random fortune returned: ${randomFortune}`)
+            rollbar.info(`Random fortune: ${randomFortune}`)
             res.status(200).send(randomFortune)
         }catch(err){
             rollbar.error(err)
