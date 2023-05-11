@@ -9,6 +9,7 @@ var rollbar = new Rollbar({
   captureUnhandledRejections: true,
 })
 
+rollbar.info("connected")
 
 let goals = []
 let id =0
@@ -19,7 +20,7 @@ module.exports = {
             // choose random compliment
             let randomIndex = Math.floor(Math.random() * compliments.length);
             let randomCompliment = compliments[randomIndex];
-            rollbar.info(`Random compliment returned: ${randomCompliment}`)
+            rollbar.log(`Random compliment returned: ${randomCompliment}`)
             res.status(200).send(randomCompliment);
         }catch(err){
             rollbar.error(err)
@@ -62,7 +63,6 @@ module.exports = {
                 return
             }
         }
-        
     },
     //grabs id from params and turn into a number
     //searches the array for a match in id and splice it out
